@@ -72,7 +72,7 @@ router.get('/finished', auth, async(req, res, next) => {
 
 // desc   Update a task 
 // method PUT
-router.put('/:id', async (req, res, next) => {
+router.put('/:id', auth ,async (req, res, next) => {
     try {
         let toDo = await Todo.findById(req.params.id);
         if(!toDo) {
