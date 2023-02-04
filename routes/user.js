@@ -124,11 +124,12 @@ router.post('/login', async(req, res, next) => {
                 expiresIn: 360000
             }, (err, token) => {
                 if(err) throw err;
+                console.log(user.username);
 
                 res.status(200).json({
                     success: true,
                     token: token,
-                    name: user.name
+                    name: user.username
                 });
             }
         )
