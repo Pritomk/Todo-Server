@@ -67,7 +67,7 @@ router.post('/register', async (req, res, next) => {
             res.status(200).json({
                 success: true,
                 token: token,
-                name: username
+                username: username
             });
         });
 
@@ -131,7 +131,7 @@ router.post('/login', async(req, res, next) => {
                 res.status(200).json({
                     success: true,
                     token: token,
-                    name: user.username
+                    username: user.username
                 });
             }
         )
