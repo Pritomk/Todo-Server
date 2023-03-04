@@ -109,4 +109,14 @@ router.delete('/:id', async (req, res, next) => {
         next(error);
     }
 });
+
+// router.get('/todaytask', async (req, res) => {
+//     try {
+
+//     } catch (error) {
+//         console.log(error.message)
+//         res.send(error.message)
+//     }
+// })
+
 module.exports = router;
