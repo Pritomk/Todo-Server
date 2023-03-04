@@ -4,6 +4,7 @@ const User = require('../models/User');
 const bcryptjs = require('bcryptjs');
 const user_jwt = require('../middleware/user_jwt');
 const jwt = require('jsonwebtoken');
+const config = require('../config/config');
 
 
 router.get('/', user_jwt, async(req, res, next) => {
@@ -59,7 +60,7 @@ router.post('/register', async (req, res, next) => {
         }
 
 
-        jwt.sign(payload, process.env.jwtUserSecret, {
+        jwt.sign(payload, config.jwtUserSecret, {
             expiresIn: 360000
         }, (err, token) => {
             if(err) throw err;
@@ -121,7 +122,7 @@ router.post('/login', async(req, res, next) => {
         }
 
         jwt.sign(
-            payload, process.env.jwtUserSecret,
+            payload, config.jwtUserSecret,
             {
                 expiresIn: 360000
             }, (err, token) => {
