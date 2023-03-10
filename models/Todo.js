@@ -23,6 +23,10 @@ const TodoSchema = new mongoose.Schema({
     createdAt: {
         type: Date,
         default: Date.now
+    },
+    tag: {
+        type: String,
+        required: true
     }
     
 });

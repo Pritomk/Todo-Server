@@ -13,7 +13,8 @@ router.post('/', auth, async (req, res, next) => {
             title: req.body.title,
             description: req.body.description, 
             user: req.user.id,
-            time: req.body.time
+            time: req.body.time,
+            tag: req.body.tag
         });
         if(!toDo) {
             return res.status(400).json({
